@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Divera Regenradar
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      0.1.1
 // @description  Fügt einem Element mit der Klasse "kh-divera-radar" das Bild des Regenradars vom DWD hinzu.
 // @author       TheKenny2303
 // @match        https://www.divera247.com/monitor/*
@@ -16,7 +16,7 @@
 
     function placeRainRadar(){
         var e = findElementWithInnerText("kh-divera-radar");
-        e.innerHTML = '<img width="100%" src="https://www.dwd.de/DWD/wetter/radar/rad_thu_akt.jpg" alt=" Niederschlagsradar für das Gebiet Sachsen">';
+        e.innerHTML = '<img id="rain-radar" width="100%" src="https://www.dwd.de/DWD/wetter/radar/rad_thu_akt.jpg" alt=" Niederschlagsradar für das Gebiet Sachsen" style="height: fit-content;">';
     }
 
     function findElementWithInnerText(searchText) {
